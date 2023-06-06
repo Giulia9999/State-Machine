@@ -1,4 +1,4 @@
-package com.example.loginsystem.entities;
+package com.example.statemachine.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

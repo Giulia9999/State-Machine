@@ -1,6 +1,6 @@
-package com.example.loginsystem.configurations;
+package com.example.statemachine.configurations;
 
-import com.example.loginsystem.services.UserService;
+import com.example.statemachine.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package com.example.loginsystem.repositories;
+package com.example.statemachine.repositories;
 
-import com.example.loginsystem.entities._User;
+import com.example.statemachine.entities._User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

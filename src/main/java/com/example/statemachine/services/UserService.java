@@ -1,7 +1,7 @@
-package com.example.loginsystem.services;
+package com.example.statemachine.services;
 
-import com.example.loginsystem.entities._User;
-import com.example.loginsystem.repositories.UserRepository;
+import com.example.statemachine.entities._User;
+import com.example.statemachine.repositories.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.security.core.GrantedAuthority;

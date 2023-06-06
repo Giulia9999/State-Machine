@@ -1,7 +1,7 @@
-package com.example.loginsystem.controllers;
+package com.example.statemachine.controllers;
 
-import com.example.loginsystem.entities._User;
-import com.example.loginsystem.services.UserService;
+import com.example.statemachine.entities._User;
+import com.example.statemachine.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

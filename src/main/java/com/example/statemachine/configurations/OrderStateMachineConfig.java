@@ -1,6 +1,14 @@
-package com.example.loginsystem.configurations;
+package com.example.statemachine.configurations;
 
+import com.example.statemachine.entities.OrderEvent;
+import com.example.statemachine.entities.OrderState;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.statemachine.config.EnableStateMachine;
+import org.springframework.statemachine.config.EnumStateMachineConfigurerAdapter;
+import org.springframework.statemachine.config.builders.StateMachineStateConfigurer;
+import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
+
+import java.util.EnumSet;
 
 @Configuration
 @EnableStateMachine

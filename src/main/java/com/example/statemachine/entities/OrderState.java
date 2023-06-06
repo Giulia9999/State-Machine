@@ -1,4 +1,4 @@
-package com.example.loginsystem.entities;
+package com.example.statemachine.entities;
 
 public enum OrderState {
     CREATED,
