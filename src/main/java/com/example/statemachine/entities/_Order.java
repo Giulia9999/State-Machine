@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "orders")
-public class _Order {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,7 @@ public class _Order {
     private String address;
 
 
-    public _Order() {
+    public Order() {
     }
 
 
