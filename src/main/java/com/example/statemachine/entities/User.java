@@ -25,9 +25,7 @@ public class User {
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
     private Set<Role> roles = new HashSet<>();
-
-    public _User() {
-    }
+    public User(){}
 
     public User(Long id, String username, String password, boolean enabled, Set<Role> roles) {
         this.id = id;

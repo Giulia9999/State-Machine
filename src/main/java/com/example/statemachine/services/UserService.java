@@ -1,16 +1,14 @@
 package com.example.statemachine.services;
 
 import com.example.statemachine.configurations.SecurityConfig;
-import com.example.statemachine.entities._User;
+import com.example.statemachine.entities.User;
 import com.example.statemachine.repositories.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,7 +28,7 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        _User user = userRepository.findByUsername(username);
+        User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("Invalid username or password");
         }
@@ -51,18 +49,18 @@ public class UserService implements UserServiceInterface {
         return authorities;
     }
 
-    public _User findByUsername(String username) {
+    public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
-    public _User save(_User user) {
+    public User save(User user) {
         user.setPassword(passwordEncoder().encode(user.getPassword()));
         user.setEnabled(true);
         return userRepository.save(user);
     }
 
-    public _User findById(Long id) {
-        Optional<_User> userToFind = userRepository.findById(id);
+    public User findById(Long id) {
+        Optional<User> userToFind = userRepository.findById(id);
         if (userToFind.isPresent()) {
             return userToFind.get();
         }

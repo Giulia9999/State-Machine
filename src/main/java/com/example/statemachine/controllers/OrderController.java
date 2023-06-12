@@ -1,6 +1,6 @@
 package com.example.statemachine.controllers;
 
-import com.example.statemachine.entities._Order;
+import com.example.statemachine.entities.Order;
 import com.example.statemachine.services.OrderService;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public ResponseEntity<_Order> createOrder(@RequestBody _Order order) {
+    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
         orderService.createOrder(order);
         orderService.startProcessing(order);
 
@@ -23,8 +23,8 @@ public class OrderController {
     }
 
     @PostMapping("/{orderId}/complete")
-    public ResponseEntity<_Order> completeOrder(@PathVariable("orderId") Long orderId) {
-        _Order order = orderService.getOrderById(orderId);
+    public ResponseEntity<Order> completeOrder(@PathVariable("orderId") Long orderId) {
+        Order order = orderService.getOrderById(orderId);
         if (order == null) {
             return ResponseEntity.notFound().build();
         }
@@ -35,8 +35,8 @@ public class OrderController {
     }
 
     @PostMapping("/{orderId}/cancel")
-    public ResponseEntity<_Order> cancelOrder(@PathVariable("orderId") Long orderId) {
-        _Order order = orderService.getOrderById(orderId);
+    public ResponseEntity<Order> cancelOrder(@PathVariable("orderId") Long orderId) {
+        Order order = orderService.getOrderById(orderId);
         if (order == null) {
             return ResponseEntity.notFound().build();
         }
