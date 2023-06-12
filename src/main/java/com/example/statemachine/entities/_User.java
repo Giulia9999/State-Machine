@@ -7,7 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class _User {
+@Table(name="users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,7 +29,7 @@ public class _User {
     public _User() {
     }
 
-    public _User(Long id, String username, String password, boolean enabled, Set<Role> roles) {
+    public User(Long id, String username, String password, boolean enabled, Set<Role> roles) {
         this.id = id;
         this.username = username;
         this.password = password;
